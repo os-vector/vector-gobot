@@ -1,4 +1,4 @@
-module github.com/kercre123/vector-gobot
+module github.com/os-vector/vector-gobot
 
 go 1.19
 
