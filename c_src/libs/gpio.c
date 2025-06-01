@@ -157,7 +157,7 @@ int gpio_create(int gpio_number, enum Gpio_Dir direction, enum Gpio_Level initia
    if (!path_exists(gpio_path)) {
       char pin_arg[16] = {0};
       (void) snprintf(pin_arg, sizeof(pin_arg), "%d", pin_number);
-      char *argv[] = {"sudo", "-n", "/sbin/export-gpio", pin_arg, NULL};
+      char *argv[] = {"/sbin/export-gpio", pin_arg, NULL};
       int rc = fork_and_exec(argv);
       if (rc || !path_exists(gpio_path)) {
          free(gp); gp = NULL;
